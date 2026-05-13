@@ -25,48 +25,24 @@ export const SoundWaveAnimation = () => (
 export const EmailPulseAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes envelope-send-top {
-        0% { transform: translateX(-6px) translateY(0); opacity: 0; }
+      @keyframes text-flow {
+        0% { opacity: 0; transform: translateY(4px); }
         50% { opacity: 1; }
-        100% { transform: translateX(6px) translateY(-5px); opacity: 0; }
+        100% { opacity: 0; transform: translateY(-4px); }
       }
-      @keyframes envelope-send-mid {
-        0% { transform: translateX(-6px) translateY(0); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: translateX(8px) translateY(0); opacity: 0; }
+      .text-line {
+        animation: text-flow 1.2s ease-in-out infinite;
       }
-      @keyframes envelope-send-bot {
-        0% { transform: translateX(-6px) translateY(0); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: translateX(6px) translateY(5px); opacity: 0; }
-      }
-      .env-top { animation: envelope-send-top 1.2s ease-out infinite; }
-      .env-mid { animation: envelope-send-mid 1.2s ease-out infinite; }
-      .env-bot { animation: envelope-send-bot 1.2s ease-out infinite; }
     `}</style>
-    <svg width="48" height="12" viewBox="0 0 48 12" className="overflow-visible">
-      {/* Top stream */}
-      <g className="env-top" style={{ animationDelay: "0s" }}>
-        <rect x="0" y="0" width="6" height="4" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" rx="0.5" />
-        <path d="M0 0 L3 2 L6 0" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.6" fill="none" />
-      </g>
+    <svg width="50" height="12" viewBox="0 0 50 12" className="overflow-visible">
+      {/* Multiple flowing text lines representing mass personalization */}
+      <line x1="2" y1="3" x2="18" y2="3" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="1" className="text-line" style={{ animationDelay: "0s" }} />
+      <line x1="2" y1="6" x2="22" y2="6" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1" className="text-line" style={{ animationDelay: "0.2s" }} />
+      <line x1="2" y1="9" x2="16" y2="9" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="1" className="text-line" style={{ animationDelay: "0.4s" }} />
       
-      {/* Middle stream */}
-      <g className="env-mid" style={{ animationDelay: "0.15s" }}>
-        <rect x="0" y="4" width="6" height="4" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" rx="0.5" />
-        <path d="M0 4 L3 6 L6 4" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.6" fill="none" />
-      </g>
-      
-      {/* Bottom stream */}
-      <g className="env-bot" style={{ animationDelay: "0.3s" }}>
-        <rect x="0" y="8" width="6" height="4" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" rx="0.5" />
-        <path d="M0 8 L3 10 L6 8" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.6" fill="none" />
-      </g>
-      
-      {/* Diverging lines showing distribution */}
-      <line x1="18" y1="2" x2="30" y2="2" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="0.5" strokeDasharray="2" opacity="0.6" />
-      <line x1="18" y1="6" x2="32" y2="6" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="0.5" strokeDasharray="2" opacity="0.6" />
-      <line x1="18" y1="10" x2="30" y2="10" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="0.5" strokeDasharray="2" opacity="0.6" />
+      {/* Arrow indicating direction/sending */}
+      <path d="M30 6 L42 6" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1" fill="none" />
+      <path d="M40 4 L42 6 L40 8" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   </div>
 );

@@ -96,12 +96,12 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-base font-bold text-red-400 flex-shrink-0" style={{ marginTop: "15px" }}>
                       ✕
                     </div>
-                    <h3 className="text-lg font-bold text-white">
+                    <h3 className="text-lg font-bold text-white" style={{ marginBottom: "-20px" }}>
                       {item.problem}
                     </h3>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 mt-auto">
+                <div className="flex items-start gap-4 mt-auto" style={{ marginBottom: "15px" }}>
                   <div className="w-10 h-10 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-base font-bold text-green-400 flex-shrink-0">
                     ✓
                   </div>

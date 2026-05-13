@@ -261,6 +261,11 @@ export default function Home() {
               );
             })}
           </div>
+          <div className="mt-16 pt-12 border-t border-white/5 text-center">
+            <p className="text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
+              Each solution is engineered to scale with your enterprise, integrate seamlessly with your existing infrastructure, and deliver measurable ROI from day one.
+            </p>
+          </div>
         </div>
       </section>
 

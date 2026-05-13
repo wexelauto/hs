@@ -25,43 +25,37 @@ export const SoundWaveAnimation = () => (
 export const EmailPulseAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes envelope-stack {
-        0% { transform: translateY(0) scale(1); opacity: 1; }
-        100% { transform: translateY(-8px) scale(0.9); opacity: 0; }
+      @keyframes document-personalize {
+        0% { opacity: 0.5; transform: scaleX(0.8); }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; transform: scaleX(1); }
       }
-      @keyframes envelope-rotate {
-        0%, 100% { transform: rotateZ(0deg); }
-        50% { transform: rotateZ(2deg); }
+      @keyframes check-validate {
+        0% { opacity: 0; }
+        50% { opacity: 1; transform: scale(1); }
+        100% { opacity: 1; transform: scale(1.1); }
       }
-      .envelope-item {
-        position: absolute;
-        animation: envelope-stack 1.2s ease-out infinite;
+      .document-line {
+        animation: document-personalize 1.2s ease-in-out infinite;
       }
-      .envelope-base {
-        animation: envelope-rotate 2s ease-in-out infinite;
+      .validation-check {
+        animation: check-validate 1.2s ease-in-out infinite;
       }
     `}</style>
-    <div className="relative w-12 h-8 flex items-center justify-center">
-      {/* Base envelope */}
-      <svg width="9" height="7" viewBox="0 0 9 7" className="envelope-base">
-        <rect x="0.5" y="0.5" width="8" height="6" fill="none" stroke="rgba(255, 255, 255, 0.9)" strokeWidth="0.7" rx="0.5" />
-        <path d="M0.5 0.5 L4.5 3.5 L8.5 0.5" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.7" fill="none" />
+    <div className="relative w-14 h-8 flex items-center justify-center">
+      {/* Document with text lines representing personalization */}
+      <svg width="10" height="8" viewBox="0 0 10 8" className="absolute left-0">
+        <rect x="0.5" y="0.5" width="7" height="7" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" rx="0.5" />
+        <line x1="1.5" y1="2" x2="5" y2="2" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.5" className="document-line" style={{ animationDelay: "0s" }} />
+        <line x1="1.5" y1="3.5" x2="6" y2="3.5" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="0.5" className="document-line" style={{ animationDelay: "0.15s" }} />
+        <line x1="1.5" y1="5" x2="5.5" y2="5" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.5" className="document-line" style={{ animationDelay: "0.3s" }} />
       </svg>
       
-      {/* Stacked envelopes being sent */}
-      {[0, 1, 2].map((i) => (
-        <svg
-          key={i}
-          width="9"
-          height="7"
-          viewBox="0 0 9 7"
-          className="envelope-item"
-          style={{ animationDelay: `${i * 0.35}s` }}
-        >
-          <rect x="0.5" y="0.5" width="8" height="6" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="0.7" rx="0.5" />
-          <path d="M0.5 0.5 L4.5 3.5 L8.5 0.5" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.7" fill="none" />
-        </svg>
-      ))}
+      {/* Checkmark validation */}
+      <svg width="6" height="6" viewBox="0 0 6 6" className="absolute right-0">
+        <circle cx="3" cy="3" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.5" />
+        <path d="M1.5 3 L2.5 4 L4.5 2" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" fill="none" strokeLinecap="round" strokeLinejoin="round" className="validation-check" />
+      </svg>
     </div>
   </div>
 );

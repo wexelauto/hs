@@ -47,7 +47,7 @@ export default function Vision() {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-600/10 rounded-full blur-[100px] animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-500/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
-        <div className="relative z-10 container mx-auto px-4 pt-10 pb-20 flex flex-col items-center justify-center text-center">
+        <div className="relative z-10 container mx-auto px-4 pt-10 pb-20 flex flex-col items-center justify-center text-center" style={{ marginTop: "-81px", marginBottom: "-56px" }}>
           <p className="text-sm font-sans text-gray-500 mb-6 tracking-widest uppercase">( OUR VISION )</p>
           <h1 className="text-5xl sm:text-7xl font-black mb-8 text-balance">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
@@ -61,7 +61,7 @@ export default function Vision() {
         </div>
       </section>
 
-      <section id="roadmap" className="py-32 bg-black scroll-mt-24">
+      <section id="roadmap" className="py-32 bg-black scroll-mt-24" style={{ marginTop: "-67px", marginBottom: "-49px" }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="mb-24">
             <p className="text-sm font-sans text-gray-500 mb-6 tracking-widest uppercase">( OUR ROADMAP )</p>
@@ -101,7 +101,7 @@ export default function Vision() {
         </div>
       </section>
 
-      <section className="py-20 bg-black border-t border-white/5">
+      <section className="py-20 bg-black border-t border-white/5" style={{ paddingTop: "35px", paddingBottom: "35px" }}>
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent">Ready to Join Our Vision?</span>

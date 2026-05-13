@@ -82,40 +82,43 @@ export const CartPriceAnimation = () => (
 export const PostsAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes heart-beat {
-        0%, 100% { transform: scale(1); opacity: 0.75; }
-        50% { transform: scale(1.15); opacity: 1; }
+      @keyframes schedule-pulse {
+        0%, 100% { opacity: 0.7; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.12); }
       }
-      @keyframes float-up {
-        0% { transform: translateY(0) scale(1); opacity: 1; }
-        100% { transform: translateY(-14px) scale(0.5); opacity: 0; }
+      @keyframes platform-flow {
+        0% { transform: translateX(-10px); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateX(10px); opacity: 0; }
       }
-      .engagement-heart {
-        animation: heart-beat 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      .schedule-icon {
+        animation: schedule-pulse 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       }
-      .float-particle {
-        position: absolute;
-        width: 2.5px;
-        height: 2.5px;
-        background: rgba(255, 255, 255, 0.85);
-        border-radius: 50%;
-        animation: float-up 1.2s ease-out infinite;
+      .platform-dot {
+        animation: platform-flow 1.2s ease-out infinite;
       }
     `}</style>
-    <div className="relative w-12 h-8 flex items-center justify-center">
-      {/* Modern heart with refined lines */}
-      <svg width="11" height="11" viewBox="0 0 11 11" className="engagement-heart" style={{ animationDelay: "0s" }}>
-        <path d="M5.5 10 C2.5 8, 0.5 6.2, 0.5 3.8 C0.5 2.1, 1.6 0.8, 3 0.8 C3.9 0.8, 4.6 1.3, 5.5 2.3 C6.4 1.3, 7.1 0.8, 8 0.8 C9.4 0.8, 10.5 2.1, 10.5 3.8 C10.5 6.2, 8.5 8, 5.5 10 Z" fill="rgba(255, 255, 255, 0.95)" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="0.4" />
+    <div className="relative w-16 h-8 flex items-center justify-center">
+      {/* Calendar/Schedule icon - represents post scheduling */}
+      <svg width="10" height="10" viewBox="0 0 10 10" className="schedule-icon absolute left-0" style={{ animationDelay: "0s" }}>
+        <rect x="0.5" y="1.5" width="9" height="7.5" fill="none" stroke="rgba(255, 255, 255, 0.95)" strokeWidth="0.75" rx="0.5" />
+        <line x1="0.5" y1="3.5" x2="9.5" y2="3.5" stroke="rgba(255, 255, 255, 0.85)" strokeWidth="0.6" />
+        <circle cx="2" cy="2" r="0.35" fill="rgba(255, 255, 255, 0.8)" />
+        <circle cx="5" cy="2" r="0.35" fill="rgba(255, 255, 255, 0.8)" />
+        <circle cx="8" cy="2" r="0.35" fill="rgba(255, 255, 255, 0.8)" />
       </svg>
       
-      {/* Floating engagement particles - modern styling */}
+      {/* Multi-platform distribution dots flowing right */}
       {[0, 1, 2].map((i) => (
         <div
           key={i}
-          className="float-particle"
+          className="platform-dot absolute"
           style={{
-            left: `${5 + i * 2}px`,
-            top: "3px",
+            left: `${6 + i * 2.5}px`,
+            width: "1.8px",
+            height: "1.8px",
+            background: "rgba(255, 255, 255, 0.9)",
+            borderRadius: "50%",
             animationDelay: `${i * 0.3}s`
           }}
         />

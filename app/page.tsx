@@ -212,7 +212,7 @@ export default function Home() {
                 animation: CartPriceAnimation,
               },
               {
-                icon: TrendingUp,
+                icon: Clock,
                 title: "Autonomous Social Media",
                 description:
                   "AI that schedules posts, responds to engagement, and tracks performance across every platform you use. One dashboard. No manual posting.",

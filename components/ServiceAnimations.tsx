@@ -143,3 +143,28 @@ export const DataFlowAnimation = () => (
     ))}
   </div>
 );
+
+export const PipelineAnimation = () => (
+  <div className="flex items-center justify-center gap-1 h-8">
+    <style>{`
+      @keyframes pipeline-flow {
+        0% { width: 3px; opacity: 0.4; }
+        50% { width: 10px; opacity: 1; }
+        100% { width: 3px; opacity: 0.4; }
+      }
+      .pipeline-stage {
+        height: 5px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 2px;
+        animation: pipeline-flow 1.2s ease-in-out infinite;
+      }
+    `}</style>
+    {[0, 1, 2, 3].map((i) => (
+      <div
+        key={i}
+        className="pipeline-stage"
+        style={{ animationDelay: `${i * 0.2}s` }}
+      />
+    ))}
+  </div>
+);

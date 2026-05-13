@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Search, Wrench, Rocket, Zap, RefreshCw, Clock, Layers, Shield, Settings, Phone, Mail, ShoppingCart, TrendingUp, Globe, Database } from "lucide-react";
-import { SoundWaveAnimation, EmailPulseAnimation, CartPriceAnimation, PostsAnimation, WebsiteLoadAnimation, DataFlowAnimation } from "@/components/ServiceAnimations";
+import { SoundWaveAnimation, EmailPulseAnimation, CartPriceAnimation, PostsAnimation, WebsiteLoadAnimation, DataFlowAnimation, PipelineAnimation } from "@/components/ServiceAnimations";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/FAQ";
 import { IndustryMarquee } from "@/components/IndustryMarquee";
@@ -230,7 +230,7 @@ export default function Home() {
                 title: "Intelligent AI CRM",
                 description:
                   "AI-powered CRM that drives engagement, scores leads, and automates follow-ups across every channel. Faster response times. A pipeline you can trust.",
-                animation: DataFlowAnimation,
+                animation: PipelineAnimation,
               },
             ].map((item, i) => {
               const IconComponent = item.icon;

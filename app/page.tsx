@@ -91,9 +91,9 @@ export default function Home() {
                 key={i}
                 className="group flex flex-col py-8 px-6 rounded-lg border border-white/10 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.05] backdrop-blur transition-all duration-300"
               >
-                <div className="mb-4">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-sm font-bold text-red-400">
+                <div className="mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-base font-bold text-red-400 flex-shrink-0">
                       ✕
                     </div>
                     <h3 className="text-lg font-bold text-white">
@@ -101,8 +101,8 @@ export default function Home() {
                     </h3>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 mt-auto">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-sm font-bold text-green-400 flex-shrink-0 mt-1">
+                <div className="flex items-start gap-4 mt-auto">
+                  <div className="w-10 h-10 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-base font-bold text-green-400 flex-shrink-0">
                     ✓
                   </div>
                   <p className="text-base text-gray-300 leading-relaxed">

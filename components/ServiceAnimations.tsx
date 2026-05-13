@@ -23,23 +23,44 @@ export const SoundWaveAnimation = () => (
 );
 
 export const EmailPulseAnimation = () => (
-  <div className="flex items-center justify-center gap-2 h-8">
+  <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes pulse-in {
-        0%, 100% { opacity: 0.3; transform: scale(0.8); }
-        50% { opacity: 1; transform: scale(1); }
+      @keyframes email-send {
+        0% { transform: translateX(-8px); opacity: 1; }
+        100% { transform: translateX(8px); opacity: 0; }
       }
-      .email-pulse {
-        width: 6px;
-        height: 6px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        animation: pulse-in 1s ease-in-out infinite;
+      @keyframes broadcast-ripple {
+        0%, 100% { r: 2px; opacity: 0.8; }
+        100% { r: 6px; opacity: 0; }
+      }
+      .email-icon {
+        animation: email-send 1.2s ease-out infinite;
+      }
+      .ripple-ring {
+        animation: broadcast-ripple 1.5s ease-out infinite;
       }
     `}</style>
-    <div className="email-pulse" style={{ animationDelay: "0s" }} />
-    <div className="email-pulse" style={{ animationDelay: "0.33s" }} />
-    <div className="email-pulse" style={{ animationDelay: "0.66s" }} />
+    <div className="relative w-12 h-8 flex items-center justify-center">
+      {/* Central email envelope */}
+      <svg width="8" height="6" viewBox="0 0 8 6" className="email-icon">
+        <rect x="0" y="0" width="8" height="6" fill="none" stroke="rgba(255, 255, 255, 0.9)" strokeWidth="0.6" rx="0.5" />
+        <path d="M0 0 L4 3 L8 0" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" fill="none" />
+      </svg>
+      
+      {/* Broadcast ripples showing mass outreach */}
+      {[0, 1, 2].map((i) => (
+        <svg
+          key={i}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          className="absolute"
+          style={{ animationDelay: `${i * 0.4}s` }}
+        >
+          <circle cx="8" cy="8" r="2" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="0.6" className="ripple-ring" />
+        </svg>
+      ))}
+    </div>
   </div>
 );
 

@@ -26,23 +26,30 @@ export const EmailPulseAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
       @keyframes text-flow {
-        0% { opacity: 0; transform: translateY(4px); }
+        0% { opacity: 0; transform: translateY(3px); }
         50% { opacity: 1; }
-        100% { opacity: 0; transform: translateY(-4px); }
+        100% { opacity: 0; transform: translateY(-3px); }
+      }
+      @keyframes arrow-pulse {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1; }
       }
       .text-line {
-        animation: text-flow 1.2s ease-in-out infinite;
+        animation: text-flow 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      .arrow-line {
+        animation: arrow-pulse 1.5s ease-in-out infinite;
       }
     `}</style>
-    <svg width="50" height="12" viewBox="0 0 50 12" className="overflow-visible">
-      {/* Multiple flowing text lines representing mass personalization */}
-      <line x1="2" y1="3" x2="18" y2="3" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="1" className="text-line" style={{ animationDelay: "0s" }} />
-      <line x1="2" y1="6" x2="22" y2="6" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1" className="text-line" style={{ animationDelay: "0.2s" }} />
-      <line x1="2" y1="9" x2="16" y2="9" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="1" className="text-line" style={{ animationDelay: "0.4s" }} />
+    <svg width="56" height="12" viewBox="0 0 56 12" className="overflow-visible">
+      {/* Modern flowing text lines with smooth curves */}
+      <line x1="3" y1="2.5" x2="18" y2="2.5" stroke="rgba(255, 255, 255, 0.85)" strokeWidth="0.8" strokeLinecap="round" className="text-line" style={{ animationDelay: "0s" }} />
+      <line x1="3" y1="6" x2="21" y2="6" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="0.8" strokeLinecap="round" className="text-line" style={{ animationDelay: "0.2s" }} />
+      <line x1="3" y1="9.5" x2="17" y2="9.5" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.8" strokeLinecap="round" className="text-line" style={{ animationDelay: "0.4s" }} />
       
-      {/* Arrow indicating direction/sending */}
-      <path d="M30 6 L42 6" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1" fill="none" />
-      <path d="M40 4 L42 6 L40 8" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Modern arrow with smooth styling */}
+      <line x1="28" y1="6" x2="45" y2="6" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="0.8" strokeLinecap="round" className="arrow-line" style={{ animationDelay: "0s" }} />
+      <path d="M43 4.5 L46 6 L43 7.5" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.9" fill="none" strokeLinecap="round" strokeLinejoin="round" className="arrow-line" style={{ animationDelay: "0s" }} />
     </svg>
   </div>
 );

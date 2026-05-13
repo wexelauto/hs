@@ -178,12 +178,12 @@ export const PipelineAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
       @keyframes node-pulse {
-        0%, 100% { r: 2px; opacity: 0.7; }
-        50% { r: 3px; opacity: 1; }
+        0%, 100% { r: 2.2px; opacity: 0.85; }
+        50% { r: 3.2px; opacity: 1; }
       }
       @keyframes line-flow {
-        0%, 100% { stroke-dashoffset: 12; opacity: 0.3; }
-        50% { stroke-dashoffset: 0; opacity: 0.8; }
+        0%, 100% { stroke-dashoffset: 12; opacity: 0.5; }
+        50% { stroke-dashoffset: 0; opacity: 0.95; }
       }
       .crm-center-node {
         animation: node-pulse 1.5s ease-in-out infinite;
@@ -194,29 +194,30 @@ export const PipelineAnimation = () => (
       .crm-connection {
         animation: line-flow 2s ease-in-out infinite;
         stroke-dasharray: 12;
+        stroke-linecap: round;
       }
     `}</style>
     <svg width="56" height="24" viewBox="0 0 56 24" className="overflow-visible">
-      {/* Connection lines with animation */}
-      <line x1="12" y1="12" x2="22" y2="7" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="0.8" className="crm-connection" style={{ animationDelay: "0s" }} />
-      <line x1="12" y1="12" x2="22" y2="17" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="0.8" className="crm-connection" style={{ animationDelay: "0.2s" }} />
-      <line x1="12" y1="12" x2="28" y2="12" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="0.8" className="crm-connection" style={{ animationDelay: "0.4s" }} />
-      <line x1="22" y1="7" x2="44" y2="8" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="0.6" className="crm-connection" style={{ animationDelay: "0.3s" }} />
-      <line x1="22" y1="17" x2="44" y2="16" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="0.6" className="crm-connection" style={{ animationDelay: "0.3s" }} />
-      <line x1="28" y1="12" x2="44" y2="12" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="0.6" className="crm-connection" style={{ animationDelay: "0.5s" }} />
+      {/* Connection lines with animation - improved contrast and cleaner styling */}
+      <line x1="12" y1="12" x2="22" y2="7" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="1" className="crm-connection" style={{ animationDelay: "0s" }} />
+      <line x1="12" y1="12" x2="22" y2="17" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="1" className="crm-connection" style={{ animationDelay: "0.2s" }} />
+      <line x1="12" y1="12" x2="28" y2="12" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="1" className="crm-connection" style={{ animationDelay: "0.4s" }} />
+      <line x1="22" y1="7" x2="44" y2="8" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="0.9" className="crm-connection" style={{ animationDelay: "0.3s" }} />
+      <line x1="22" y1="17" x2="44" y2="16" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="0.9" className="crm-connection" style={{ animationDelay: "0.3s" }} />
+      <line x1="28" y1="12" x2="44" y2="12" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="0.9" className="crm-connection" style={{ animationDelay: "0.5s" }} />
       
-      {/* Central node (Customer/Lead) */}
-      <circle cx="12" cy="12" r="2" fill="rgba(255, 255, 255, 0.9)" className="crm-center-node" style={{ animationDelay: "0s" }} />
+      {/* Central node (Customer/Lead) - higher contrast */}
+      <circle cx="12" cy="12" r="2.2" fill="rgba(255, 255, 255, 1)" className="crm-center-node" style={{ animationDelay: "0s" }} />
       
-      {/* First tier nodes (Channels) */}
-      <circle cx="22" cy="7" r="1.5" fill="rgba(255, 255, 255, 0.7)" className="crm-outer-node" style={{ animationDelay: "0.3s" }} />
-      <circle cx="22" cy="17" r="1.5" fill="rgba(255, 255, 255, 0.7)" className="crm-outer-node" style={{ animationDelay: "0.3s" }} />
-      <circle cx="28" cy="12" r="1.5" fill="rgba(255, 255, 255, 0.7)" className="crm-outer-node" style={{ animationDelay: "0.5s" }} />
+      {/* First tier nodes (Channels) - improved contrast */}
+      <circle cx="22" cy="7" r="1.6" fill="rgba(255, 255, 255, 0.85)" className="crm-outer-node" style={{ animationDelay: "0.3s" }} />
+      <circle cx="22" cy="17" r="1.6" fill="rgba(255, 255, 255, 0.85)" className="crm-outer-node" style={{ animationDelay: "0.3s" }} />
+      <circle cx="28" cy="12" r="1.6" fill="rgba(255, 255, 255, 0.85)" className="crm-outer-node" style={{ animationDelay: "0.5s" }} />
       
-      {/* Second tier nodes (Touchpoints) */}
-      <circle cx="44" cy="8" r="1.2" fill="rgba(255, 255, 255, 0.6)" className="crm-outer-node" style={{ animationDelay: "0.6s" }} />
-      <circle cx="44" cy="16" r="1.2" fill="rgba(255, 255, 255, 0.6)" className="crm-outer-node" style={{ animationDelay: "0.6s" }} />
-      <circle cx="44" cy="12" r="1.2" fill="rgba(255, 255, 255, 0.6)" className="crm-outer-node" style={{ animationDelay: "0.8s" }} />
+      {/* Second tier nodes (Touchpoints) - improved contrast */}
+      <circle cx="44" cy="8" r="1.4" fill="rgba(255, 255, 255, 0.75)" className="crm-outer-node" style={{ animationDelay: "0.6s" }} />
+      <circle cx="44" cy="16" r="1.4" fill="rgba(255, 255, 255, 0.75)" className="crm-outer-node" style={{ animationDelay: "0.6s" }} />
+      <circle cx="44" cy="12" r="1.4" fill="rgba(255, 255, 255, 0.75)" className="crm-outer-node" style={{ animationDelay: "0.8s" }} />
     </svg>
   </div>
 );

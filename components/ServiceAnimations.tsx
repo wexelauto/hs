@@ -83,39 +83,39 @@ export const PostsAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
       @keyframes heart-beat {
-        0%, 100% { transform: scale(1); opacity: 0.6; }
-        50% { transform: scale(1.2); opacity: 1; }
+        0%, 100% { transform: scale(1); opacity: 0.75; }
+        50% { transform: scale(1.15); opacity: 1; }
       }
       @keyframes float-up {
-        0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-12px); opacity: 0; }
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(-14px) scale(0.5); opacity: 0; }
       }
       .engagement-heart {
-        animation: heart-beat 1.5s ease-in-out infinite;
+        animation: heart-beat 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       }
       .float-particle {
         position: absolute;
-        width: 3px;
-        height: 3px;
-        background: rgba(255, 255, 255, 0.7);
+        width: 2.5px;
+        height: 2.5px;
+        background: rgba(255, 255, 255, 0.85);
         border-radius: 50%;
         animation: float-up 1.2s ease-out infinite;
       }
     `}</style>
     <div className="relative w-12 h-8 flex items-center justify-center">
-      {/* Main engagement indicator (heart shape representation) */}
-      <svg width="10" height="10" viewBox="0 0 10 10" className="engagement-heart" style={{ animationDelay: "0s" }}>
-        <path d="M5 9 C2 7, 0 5.5, 0 3.5 C0 2, 1 0.5, 2.5 0.5 C3.5 0.5, 4 1, 5 2 C6 1, 6.5 0.5, 7.5 0.5 C9 0.5, 10 2, 10 3.5 C10 5.5, 8 7, 5 9 Z" fill="rgba(255, 255, 255, 0.8)" />
+      {/* Modern heart with refined lines */}
+      <svg width="11" height="11" viewBox="0 0 11 11" className="engagement-heart" style={{ animationDelay: "0s" }}>
+        <path d="M5.5 10 C2.5 8, 0.5 6.2, 0.5 3.8 C0.5 2.1, 1.6 0.8, 3 0.8 C3.9 0.8, 4.6 1.3, 5.5 2.3 C6.4 1.3, 7.1 0.8, 8 0.8 C9.4 0.8, 10.5 2.1, 10.5 3.8 C10.5 6.2, 8.5 8, 5.5 10 Z" fill="rgba(255, 255, 255, 0.95)" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="0.4" />
       </svg>
       
-      {/* Floating engagement particles */}
+      {/* Floating engagement particles - modern styling */}
       {[0, 1, 2].map((i) => (
         <div
           key={i}
           className="float-particle"
           style={{
-            left: `${4 + i * 2}px`,
-            top: "4px",
+            left: `${5 + i * 2}px`,
+            top: "3px",
             animationDelay: `${i * 0.3}s`
           }}
         />

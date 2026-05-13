@@ -25,38 +25,25 @@ export const SoundWaveAnimation = () => (
 export const EmailPulseAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes document-personalize {
-        0% { opacity: 0.5; transform: scaleX(0.8); }
+      @keyframes text-flow {
+        0% { opacity: 0; transform: translateY(4px); }
         50% { opacity: 1; }
-        100% { opacity: 0.5; transform: scaleX(1); }
+        100% { opacity: 0; transform: translateY(-4px); }
       }
-      @keyframes check-validate {
-        0% { opacity: 0; }
-        50% { opacity: 1; transform: scale(1); }
-        100% { opacity: 1; transform: scale(1.1); }
-      }
-      .document-line {
-        animation: document-personalize 1.2s ease-in-out infinite;
-      }
-      .validation-check {
-        animation: check-validate 1.2s ease-in-out infinite;
+      .text-line {
+        animation: text-flow 1.2s ease-in-out infinite;
       }
     `}</style>
-    <div className="relative w-14 h-8 flex items-center justify-center">
-      {/* Document with text lines representing personalization */}
-      <svg width="10" height="8" viewBox="0 0 10 8" className="absolute left-0">
-        <rect x="0.5" y="0.5" width="7" height="7" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" rx="0.5" />
-        <line x1="1.5" y1="2" x2="5" y2="2" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.5" className="document-line" style={{ animationDelay: "0s" }} />
-        <line x1="1.5" y1="3.5" x2="6" y2="3.5" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="0.5" className="document-line" style={{ animationDelay: "0.15s" }} />
-        <line x1="1.5" y1="5" x2="5.5" y2="5" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.5" className="document-line" style={{ animationDelay: "0.3s" }} />
-      </svg>
+    <svg width="50" height="12" viewBox="0 0 50 12" className="overflow-visible">
+      {/* Multiple flowing text lines representing mass personalization */}
+      <line x1="2" y1="3" x2="18" y2="3" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="1" className="text-line" style={{ animationDelay: "0s" }} />
+      <line x1="2" y1="6" x2="22" y2="6" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1" className="text-line" style={{ animationDelay: "0.2s" }} />
+      <line x1="2" y1="9" x2="16" y2="9" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="1" className="text-line" style={{ animationDelay: "0.4s" }} />
       
-      {/* Checkmark validation */}
-      <svg width="6" height="6" viewBox="0 0 6 6" className="absolute right-0">
-        <circle cx="3" cy="3" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.5" />
-        <path d="M1.5 3 L2.5 4 L4.5 2" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" fill="none" strokeLinecap="round" strokeLinejoin="round" className="validation-check" />
-      </svg>
-    </div>
+      {/* Arrow indicating direction/sending */}
+      <path d="M30 6 L42 6" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1" fill="none" />
+      <path d="M40 4 L42 6 L40 8" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="0.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   </div>
 );
 

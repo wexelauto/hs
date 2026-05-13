@@ -202,7 +202,7 @@ export default function Home() {
                 title: "Mass Outreach Automation",
                 description:
                   "AI writes a unique email for every prospect. Actual personalization based on who they are and what they care about. Thousands go out. They land in inboxes, not spam.",
-                animation: EmailPulseAnimation,
+                animation: null,
               },
               {
                 icon: ShoppingCart,
@@ -216,7 +216,7 @@ export default function Home() {
                 title: "Autonomous Social Media",
                 description:
                   "AI that schedules posts, responds to engagement, and tracks performance across every platform you use. One dashboard. No manual posting.",
-                animation: PostsAnimation,
+                animation: null,
               },
               {
                 icon: Globe,
@@ -230,7 +230,7 @@ export default function Home() {
                 title: "Intelligent AI CRM",
                 description:
                   "AI-powered CRM that drives engagement, scores leads, and automates follow-ups across every channel. Faster response times. A pipeline you can trust.",
-                animation: DataFlowAnimation,
+                animation: null,
               },
             ].map((item, i) => {
               const IconComponent = item.icon;
@@ -240,14 +240,21 @@ export default function Home() {
                   key={i}
                   className="group relative p-6 rounded-lg border border-white/10 hover:border-white/20 bg-white/[0.02] backdrop-blur hover:bg-white/[0.05] transition-all duration-300"
                 >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex-shrink-0">
+                  {AnimationComponent && (
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="flex-shrink-0">
+                        <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <AnimationComponent />
+                      </div>
+                    </div>
+                  )}
+                  {!AnimationComponent && (
+                    <div className="mb-4">
                       <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
                     </div>
-                    <div>
-                      <AnimationComponent />
-                    </div>
-                  </div>
+                  )}
                   <h3 className="text-base font-bold mb-3 text-white">{item.title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
                 </div>

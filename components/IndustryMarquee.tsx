@@ -10,7 +10,7 @@ const industries = [
 
 export function IndustryMarquee() {
   return (
-    <section className="py-24 bg-black border-t border-white/5 overflow-hidden relative">
+    <section className="bg-black border-t border-white/5 overflow-hidden relative" style={{ paddingTop: "55px", paddingBottom: "55px" }}>
       <div className="container mx-auto px-4 mb-12 text-center">
         <p className="text-xs font-sans text-white tracking-[0.3em] uppercase">EXPERTISE DEFINING INDUSTRIES</p>
       </div>

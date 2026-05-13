@@ -101,7 +101,7 @@ export default function Home() {
                     </h3>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 mt-auto">
+                <div className="flex items-start gap-4 mt-auto">
                   <div className="w-10 h-10 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-base font-bold text-green-400 flex-shrink-0">
                     ✓
                   </div>

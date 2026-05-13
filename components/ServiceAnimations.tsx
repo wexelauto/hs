@@ -82,40 +82,49 @@ export const CartPriceAnimation = () => (
 export const PostsAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes platform-sync {
-        0%, 100% { opacity: 0.75; }
+      @keyframes center-platform-sync {
+        0%, 100% { opacity: 1; }
         50% { opacity: 1; }
+      }
+      @keyframes outer-platform-sync {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 0.7; }
       }
       @keyframes engagement-flow {
         0% { transform: translateY(-8px); opacity: 0; }
         50% { opacity: 1; }
         100% { transform: translateY(8px); opacity: 0; }
       }
-      .platform-circle {
-        animation: platform-sync 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      .center-platform {
+        animation: center-platform-sync 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      .outer-platform {
+        animation: outer-platform-sync 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       }
       .engagement-pulse {
         animation: engagement-flow 1.2s ease-out infinite;
       }
     `}</style>
     <svg width="56" height="12" viewBox="0 0 56 12" className="overflow-visible">
-      {/* Three platform circles representing multi-platform management */}
-      <circle cx="8" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.95)" strokeWidth="1" className="platform-circle" style={{ animationDelay: "0s" }} />
-      <circle cx="28" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.95)" strokeWidth="1" className="platform-circle" style={{ animationDelay: "0.2s" }} />
-      <circle cx="48" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.95)" strokeWidth="1" className="platform-circle" style={{ animationDelay: "0.4s" }} />
+      {/* Outer platform circles - secondary importance, smaller and muted */}
+      <circle cx="8" cy="6" r="1.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="0.75" className="outer-platform" style={{ animationDelay: "0s" }} />
+      <circle cx="48" cy="6" r="1.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="0.75" className="outer-platform" style={{ animationDelay: "0.4s" }} />
       
-      {/* Connecting lines showing synchronization */}
-      <line x1="10.5" y1="6" x2="25.5" y2="6" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="0.8" strokeDasharray="2" />
-      <line x1="30.5" y1="6" x2="45.5" y2="6" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="0.8" strokeDasharray="2" />
+      {/* Center platform circle - primary focus, largest and brightest */}
+      <circle cx="28" cy="6" r="3" fill="none" stroke="rgba(255, 255, 255, 1)" strokeWidth="1.2" className="center-platform" style={{ animationDelay: "0.2s" }} />
       
-      {/* Engagement/response indicators flowing upward from center platform */}
+      {/* Connecting lines showing synchronization - muted background elements */}
+      <line x1="9.8" y1="6" x2="25" y2="6" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="0.6" strokeDasharray="2" />
+      <line x1="31" y1="6" x2="46.2" y2="6" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="0.6" strokeDasharray="2" />
+      
+      {/* Engagement/response indicators flowing from center platform - highlights primary action */}
       {[0, 1].map((i) => (
         <circle
           key={i}
           cx="28"
           cy="6"
-          r="1"
-          fill="rgba(255, 255, 255, 0.95)"
+          r="1.2"
+          fill="rgba(255, 255, 255, 1)"
           className="engagement-pulse"
           style={{ animationDelay: `${i * 0.4}s` }}
         />

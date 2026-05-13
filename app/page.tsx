@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Search, Wrench, Rocket, Zap, RefreshCw, Headphones, Layers, Shield, Settings, Phone, Mail, ShoppingCart, TrendingUp, Globe, Database } from "lucide-react";
+import { Search, Wrench, Rocket, Zap, RefreshCw, Clock, Layers, Shield, Settings, Phone, Mail, ShoppingCart, TrendingUp, Globe, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/FAQ";
 import { IndustryMarquee } from "@/components/IndustryMarquee";
@@ -138,7 +138,7 @@ export default function Home() {
                 description: "Seamlessly connect with your existing tools and platforms instantly.",
               },
               {
-                icon: Headphones,
+                icon: Clock,
                 title: "24/7 Operation",
                 description: "Continuous automation without human intervention or downtime.",
               },

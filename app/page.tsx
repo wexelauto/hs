@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Search, Wrench, Rocket, Zap, RefreshCw, Clock, Layers, Shield, Settings, Phone, Mail, ShoppingCart, TrendingUp, Globe, Database } from "lucide-react";
+import { SoundWaveAnimation, EmailPulseAnimation, CartPriceAnimation, PostsAnimation, WebsiteLoadAnimation, DataFlowAnimation } from "@/components/ServiceAnimations";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/FAQ";
 import { IndustryMarquee } from "@/components/IndustryMarquee";
@@ -194,39 +195,46 @@ export default function Home() {
                 title: "AI Voice Solutions",
                 description:
                   "AI voice agents that pick up the phone, qualify leads, book appointments, and handle support. They sound human, work 24/7, and never miss a call.",
+                animation: SoundWaveAnimation,
               },
               {
                 icon: Mail,
                 title: "Mass Outreach Automation",
                 description:
                   "AI writes a unique email for every prospect. Actual personalization based on who they are and what they care about. Thousands go out. They land in inboxes, not spam.",
+                animation: EmailPulseAnimation,
               },
               {
                 icon: ShoppingCart,
                 title: "E-Commerce Intelligence",
                 description:
                   "AI that knows what your customers want before they do. Dynamic pricing adjusts in real time. Abandoned carts get recovered automatically.",
+                animation: CartPriceAnimation,
               },
               {
                 icon: TrendingUp,
                 title: "Autonomous Social Media",
                 description:
                   "AI that schedules posts, responds to engagement, and tracks performance across every platform you use. One dashboard. No manual posting.",
+                animation: PostsAnimation,
               },
               {
                 icon: Globe,
                 title: "Next-Gen Web Experiences",
                 description:
                   "Websites that load fast, rank well, and convert visitors into customers. Clean code, strategic design, and SEO built into the foundation.",
+                animation: WebsiteLoadAnimation,
               },
               {
                 icon: Database,
                 title: "Intelligent AI CRM",
                 description:
                   "AI-powered CRM that drives engagement, scores leads, and automates follow-ups across every channel. Faster response times. A pipeline you can trust.",
+                animation: DataFlowAnimation,
               },
             ].map((item, i) => {
               const IconComponent = item.icon;
+              const AnimationComponent = item.animation;
               return (
                 <div
                   key={i}
@@ -234,6 +242,9 @@ export default function Home() {
                 >
                   <div className="mb-4">
                     <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  </div>
+                  <div className="mb-4">
+                    <AnimationComponent />
                   </div>
                   <h3 className="text-base font-bold mb-3 text-white">{item.title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>

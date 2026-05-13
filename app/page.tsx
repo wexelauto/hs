@@ -202,7 +202,7 @@ export default function Home() {
                 title: "Mass Outreach Automation",
                 description:
                   "AI writes a unique email for every prospect. Actual personalization based on who they are and what they care about. Thousands go out. They land in inboxes, not spam.",
-                animation: null,
+                animation: EmailPulseAnimation,
               },
               {
                 icon: ShoppingCart,
@@ -216,7 +216,7 @@ export default function Home() {
                 title: "Autonomous Social Media",
                 description:
                   "AI that schedules posts, responds to engagement, and tracks performance across every platform you use. One dashboard. No manual posting.",
-                animation: null,
+                animation: PostsAnimation,
               },
               {
                 icon: Globe,
@@ -230,7 +230,7 @@ export default function Home() {
                 title: "Intelligent AI CRM",
                 description:
                   "AI-powered CRM that drives engagement, scores leads, and automates follow-ups across every channel. Faster response times. A pipeline you can trust.",
-                animation: null,
+                animation: DataFlowAnimation,
               },
             ].map((item, i) => {
               const IconComponent = item.icon;

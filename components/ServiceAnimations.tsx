@@ -197,27 +197,23 @@ export const PipelineAnimation = () => (
         stroke-linecap: round;
       }
     `}</style>
-    <svg width="56" height="24" viewBox="0 0 56 24" className="overflow-visible">
-      {/* Connection lines with animation - improved contrast and cleaner styling */}
-      <line x1="12" y1="12" x2="22" y2="7" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="1" className="crm-connection" style={{ animationDelay: "0s" }} />
-      <line x1="12" y1="12" x2="22" y2="17" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="1" className="crm-connection" style={{ animationDelay: "0.2s" }} />
-      <line x1="12" y1="12" x2="28" y2="12" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="1" className="crm-connection" style={{ animationDelay: "0.4s" }} />
-      <line x1="22" y1="7" x2="44" y2="8" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="0.9" className="crm-connection" style={{ animationDelay: "0.3s" }} />
-      <line x1="22" y1="17" x2="44" y2="16" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="0.9" className="crm-connection" style={{ animationDelay: "0.3s" }} />
-      <line x1="28" y1="12" x2="44" y2="12" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="0.9" className="crm-connection" style={{ animationDelay: "0.5s" }} />
+    <svg width="48" height="18" viewBox="0 0 48 18" className="overflow-visible">
+      {/* Simplified connection lines */}
+      <line x1="8" y1="9" x2="20" y2="4" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="1" className="crm-connection" style={{ animationDelay: "0s" }} />
+      <line x1="8" y1="9" x2="20" y2="14" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="1" className="crm-connection" style={{ animationDelay: "0.2s" }} />
+      <line x1="20" y1="4" x2="40" y2="6" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="0.9" className="crm-connection" style={{ animationDelay: "0.3s" }} />
+      <line x1="20" y1="14" x2="40" y2="12" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="0.9" className="crm-connection" style={{ animationDelay: "0.3s" }} />
       
-      {/* Central node (Customer/Lead) - higher contrast */}
-      <circle cx="12" cy="12" r="2.2" fill="rgba(255, 255, 255, 1)" className="crm-center-node" style={{ animationDelay: "0s" }} />
+      {/* Simplified nodes - Central node */}
+      <circle cx="8" cy="9" r="2.2" fill="rgba(255, 255, 255, 1)" className="crm-center-node" style={{ animationDelay: "0s" }} />
       
-      {/* First tier nodes (Channels) - improved contrast */}
-      <circle cx="22" cy="7" r="1.6" fill="rgba(255, 255, 255, 0.85)" className="crm-outer-node" style={{ animationDelay: "0.3s" }} />
-      <circle cx="22" cy="17" r="1.6" fill="rgba(255, 255, 255, 0.85)" className="crm-outer-node" style={{ animationDelay: "0.3s" }} />
-      <circle cx="28" cy="12" r="1.6" fill="rgba(255, 255, 255, 0.85)" className="crm-outer-node" style={{ animationDelay: "0.5s" }} />
+      {/* Middle tier nodes */}
+      <circle cx="20" cy="4" r="1.6" fill="rgba(255, 255, 255, 0.85)" className="crm-outer-node" style={{ animationDelay: "0.3s" }} />
+      <circle cx="20" cy="14" r="1.6" fill="rgba(255, 255, 255, 0.85)" className="crm-outer-node" style={{ animationDelay: "0.3s" }} />
       
-      {/* Second tier nodes (Touchpoints) - improved contrast */}
-      <circle cx="44" cy="8" r="1.4" fill="rgba(255, 255, 255, 0.75)" className="crm-outer-node" style={{ animationDelay: "0.6s" }} />
-      <circle cx="44" cy="16" r="1.4" fill="rgba(255, 255, 255, 0.75)" className="crm-outer-node" style={{ animationDelay: "0.6s" }} />
-      <circle cx="44" cy="12" r="1.4" fill="rgba(255, 255, 255, 0.75)" className="crm-outer-node" style={{ animationDelay: "0.8s" }} />
+      {/* Outer tier nodes - simplified to 2 */}
+      <circle cx="40" cy="6" r="1.4" fill="rgba(255, 255, 255, 0.75)" className="crm-outer-node" style={{ animationDelay: "0.6s" }} />
+      <circle cx="40" cy="12" r="1.4" fill="rgba(255, 255, 255, 0.75)" className="crm-outer-node" style={{ animationDelay: "0.6s" }} />
     </svg>
   </div>
 );

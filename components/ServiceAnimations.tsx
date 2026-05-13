@@ -69,28 +69,47 @@ export const CartPriceAnimation = () => (
 );
 
 export const PostsAnimation = () => (
-  <div className="flex items-center justify-center gap-1.5 h-8">
+  <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes slide-in {
-        0% { transform: translateX(-10px); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: translateX(10px); opacity: 0; }
+      @keyframes heart-beat {
+        0%, 100% { transform: scale(1); opacity: 0.6; }
+        50% { transform: scale(1.2); opacity: 1; }
       }
-      .post-box {
-        width: 4px;
-        height: 6px;
+      @keyframes float-up {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-12px); opacity: 0; }
+      }
+      .engagement-heart {
+        animation: heart-beat 1.5s ease-in-out infinite;
+      }
+      .float-particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
         background: rgba(255, 255, 255, 0.7);
-        border-radius: 1px;
-        animation: slide-in 1.2s ease-in-out infinite;
+        border-radius: 50%;
+        animation: float-up 1.2s ease-out infinite;
       }
     `}</style>
-    {[0, 1, 2].map((i) => (
-      <div
-        key={i}
-        className="post-box"
-        style={{ animationDelay: `${i * 0.3}s` }}
-      />
-    ))}
+    <div className="relative w-12 h-8 flex items-center justify-center">
+      {/* Main engagement indicator (heart shape representation) */}
+      <svg width="10" height="10" viewBox="0 0 10 10" className="engagement-heart" style={{ animationDelay: "0s" }}>
+        <path d="M5 9 C2 7, 0 5.5, 0 3.5 C0 2, 1 0.5, 2.5 0.5 C3.5 0.5, 4 1, 5 2 C6 1, 6.5 0.5, 7.5 0.5 C9 0.5, 10 2, 10 3.5 C10 5.5, 8 7, 5 9 Z" fill="rgba(255, 255, 255, 0.8)" />
+      </svg>
+      
+      {/* Floating engagement particles */}
+      {[0, 1, 2].map((i) => (
+        <div
+          key={i}
+          className="float-particle"
+          style={{
+            left: `${4 + i * 2}px`,
+            top: "4px",
+            animationDelay: `${i * 0.3}s`
+          }}
+        />
+      ))}
+    </div>
   </div>
 );
 

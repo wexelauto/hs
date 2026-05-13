@@ -83,7 +83,7 @@ export const PostsAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
       @keyframes platform-sync {
-        0%, 100% { opacity: 0.6; }
+        0%, 100% { opacity: 0.75; }
         50% { opacity: 1; }
       }
       @keyframes engagement-flow {
@@ -100,13 +100,13 @@ export const PostsAnimation = () => (
     `}</style>
     <svg width="56" height="12" viewBox="0 0 56 12" className="overflow-visible">
       {/* Three platform circles representing multi-platform management */}
-      <circle cx="8" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.8" className="platform-circle" style={{ animationDelay: "0s" }} />
-      <circle cx="28" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.8" className="platform-circle" style={{ animationDelay: "0.2s" }} />
-      <circle cx="48" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.8" className="platform-circle" style={{ animationDelay: "0.4s" }} />
+      <circle cx="8" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.95)" strokeWidth="1" className="platform-circle" style={{ animationDelay: "0s" }} />
+      <circle cx="28" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.95)" strokeWidth="1" className="platform-circle" style={{ animationDelay: "0.2s" }} />
+      <circle cx="48" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.95)" strokeWidth="1" className="platform-circle" style={{ animationDelay: "0.4s" }} />
       
       {/* Connecting lines showing synchronization */}
-      <line x1="10.5" y1="6" x2="25.5" y2="6" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.6" strokeDasharray="2" />
-      <line x1="30.5" y1="6" x2="45.5" y2="6" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.6" strokeDasharray="2" />
+      <line x1="10.5" y1="6" x2="25.5" y2="6" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="0.8" strokeDasharray="2" />
+      <line x1="30.5" y1="6" x2="45.5" y2="6" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="0.8" strokeDasharray="2" />
       
       {/* Engagement/response indicators flowing upward from center platform */}
       {[0, 1].map((i) => (
@@ -115,7 +115,7 @@ export const PostsAnimation = () => (
           cx="28"
           cy="6"
           r="1"
-          fill="rgba(255, 255, 255, 0.8)"
+          fill="rgba(255, 255, 255, 0.95)"
           className="engagement-pulse"
           style={{ animationDelay: `${i * 0.4}s` }}
         />

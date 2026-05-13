@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Search, Wrench, Rocket, Zap, RefreshCw, Clock, Layers, Shield, Settings, Phone, Mail, ShoppingCart, TrendingUp, Globe, Database } from "lucide-react";
+import { Search, Wrench, Rocket, Zap, RefreshCw, Clock, Layers, Shield, Settings, Phone, Mail, ShoppingCart, TrendingUp, Globe, Database, Share2 } from "lucide-react";
 import { SoundWaveAnimation, EmailPulseAnimation, CartPriceAnimation, PostsAnimation, WebsiteLoadAnimation, DataFlowAnimation, PipelineAnimation } from "@/components/ServiceAnimations";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/FAQ";
@@ -212,7 +212,7 @@ export default function Home() {
                 animation: CartPriceAnimation,
               },
               {
-                icon: Zap,
+                icon: Share2,
                 title: "Autonomous Social Media",
                 description:
                   "AI that schedules posts, responds to engagement, and tracks performance across every platform you use. One dashboard. No manual posting.",

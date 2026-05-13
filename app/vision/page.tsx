@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
 
 const roadmapItems = [
   {
@@ -58,12 +57,7 @@ export default function Vision() {
           <p className="text-xl text-gray-400 max-w-3xl leading-relaxed text-balance">
             We are on a mission to democratize enterprise-grade AI. Our roadmap focuses on aggressive expansion, relentless innovation, and redefining operational excellence through advanced autonomous solutions.
           </p>
-          <div className="mt-16 flex flex-col items-center gap-4">
-            <p className="text-sm font-sans text-gray-500 tracking-widest uppercase">READ MORE</p>
-            <Link href="#roadmap" className="animate-bounce cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-              <ChevronDown className="w-6 h-6 text-white" />
-            </Link>
-          </div>
+
         </div>
       </section>
 

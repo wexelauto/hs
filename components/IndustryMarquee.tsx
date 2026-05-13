@@ -25,9 +25,6 @@ export function IndustryMarquee() {
           .animate-marquee {
             animation: marquee 30s linear infinite;
           }
-          .animate-marquee:hover {
-            animation-play-state: paused;
-          }
         `}</style>
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (

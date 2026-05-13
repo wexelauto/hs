@@ -25,39 +25,41 @@ export const SoundWaveAnimation = () => (
 export const EmailPulseAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes email-send {
-        0% { transform: translateX(-8px); opacity: 1; }
-        100% { transform: translateX(8px); opacity: 0; }
+      @keyframes envelope-stack {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(-8px) scale(0.9); opacity: 0; }
       }
-      @keyframes broadcast-ripple {
-        0%, 100% { r: 2px; opacity: 0.8; }
-        100% { r: 6px; opacity: 0; }
+      @keyframes envelope-rotate {
+        0%, 100% { transform: rotateZ(0deg); }
+        50% { transform: rotateZ(2deg); }
       }
-      .email-icon {
-        animation: email-send 1.2s ease-out infinite;
+      .envelope-item {
+        position: absolute;
+        animation: envelope-stack 1.2s ease-out infinite;
       }
-      .ripple-ring {
-        animation: broadcast-ripple 1.5s ease-out infinite;
+      .envelope-base {
+        animation: envelope-rotate 2s ease-in-out infinite;
       }
     `}</style>
     <div className="relative w-12 h-8 flex items-center justify-center">
-      {/* Central email envelope */}
-      <svg width="8" height="6" viewBox="0 0 8 6" className="email-icon">
-        <rect x="0" y="0" width="8" height="6" fill="none" stroke="rgba(255, 255, 255, 0.9)" strokeWidth="0.6" rx="0.5" />
-        <path d="M0 0 L4 3 L8 0" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.6" fill="none" />
+      {/* Base envelope */}
+      <svg width="9" height="7" viewBox="0 0 9 7" className="envelope-base">
+        <rect x="0.5" y="0.5" width="8" height="6" fill="none" stroke="rgba(255, 255, 255, 0.9)" strokeWidth="0.7" rx="0.5" />
+        <path d="M0.5 0.5 L4.5 3.5 L8.5 0.5" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.7" fill="none" />
       </svg>
       
-      {/* Broadcast ripples showing mass outreach */}
+      {/* Stacked envelopes being sent */}
       {[0, 1, 2].map((i) => (
         <svg
           key={i}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          className="absolute"
-          style={{ animationDelay: `${i * 0.4}s` }}
+          width="9"
+          height="7"
+          viewBox="0 0 9 7"
+          className="envelope-item"
+          style={{ animationDelay: `${i * 0.35}s` }}
         >
-          <circle cx="8" cy="8" r="2" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="0.6" className="ripple-ring" />
+          <rect x="0.5" y="0.5" width="8" height="6" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="0.7" rx="0.5" />
+          <path d="M0.5 0.5 L4.5 3.5 L8.5 0.5" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.7" fill="none" />
         </svg>
       ))}
     </div>

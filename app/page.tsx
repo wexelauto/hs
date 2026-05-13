@@ -240,11 +240,13 @@ export default function Home() {
                   key={i}
                   className="group relative p-6 rounded-lg border border-white/10 hover:border-white/20 bg-white/[0.02] backdrop-blur hover:bg-white/[0.05] transition-all duration-300"
                 >
-                  <div className="mb-4">
-                    <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
-                  </div>
-                  <div className="mb-4">
-                    <AnimationComponent />
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0">
+                      <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <AnimationComponent />
+                    </div>
                   </div>
                   <h3 className="text-base font-bold mb-3 text-white">{item.title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>

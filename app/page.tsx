@@ -93,7 +93,7 @@ export default function Home() {
               >
                 <div className="mb-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-base font-bold text-red-400 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-base font-bold text-red-400 flex-shrink-0" style={{ marginTop: "15px" }}>
                       ✕
                     </div>
                     <h3 className="text-lg font-bold text-white">

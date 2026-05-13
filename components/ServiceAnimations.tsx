@@ -82,48 +82,45 @@ export const CartPriceAnimation = () => (
 export const PostsAnimation = () => (
   <div className="flex items-center justify-center h-8">
     <style>{`
-      @keyframes schedule-pulse {
-        0%, 100% { opacity: 0.7; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.12); }
-      }
-      @keyframes platform-flow {
-        0% { transform: translateX(-10px); opacity: 0; }
+      @keyframes platform-sync {
+        0%, 100% { opacity: 0.6; }
         50% { opacity: 1; }
-        100% { transform: translateX(10px); opacity: 0; }
       }
-      .schedule-icon {
-        animation: schedule-pulse 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      @keyframes engagement-flow {
+        0% { transform: translateY(-8px); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(8px); opacity: 0; }
       }
-      .platform-dot {
-        animation: platform-flow 1.2s ease-out infinite;
+      .platform-circle {
+        animation: platform-sync 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      .engagement-pulse {
+        animation: engagement-flow 1.2s ease-out infinite;
       }
     `}</style>
-    <div className="relative w-16 h-8 flex items-center justify-center">
-      {/* Calendar/Schedule icon - represents post scheduling */}
-      <svg width="10" height="10" viewBox="0 0 10 10" className="schedule-icon absolute left-0" style={{ animationDelay: "0s" }}>
-        <rect x="0.5" y="1.5" width="9" height="7.5" fill="none" stroke="rgba(255, 255, 255, 0.95)" strokeWidth="0.75" rx="0.5" />
-        <line x1="0.5" y1="3.5" x2="9.5" y2="3.5" stroke="rgba(255, 255, 255, 0.85)" strokeWidth="0.6" />
-        <circle cx="2" cy="2" r="0.35" fill="rgba(255, 255, 255, 0.8)" />
-        <circle cx="5" cy="2" r="0.35" fill="rgba(255, 255, 255, 0.8)" />
-        <circle cx="8" cy="2" r="0.35" fill="rgba(255, 255, 255, 0.8)" />
-      </svg>
+    <svg width="56" height="12" viewBox="0 0 56 12" className="overflow-visible">
+      {/* Three platform circles representing multi-platform management */}
+      <circle cx="8" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.8" className="platform-circle" style={{ animationDelay: "0s" }} />
+      <circle cx="28" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.8" className="platform-circle" style={{ animationDelay: "0.2s" }} />
+      <circle cx="48" cy="6" r="2.5" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="0.8" className="platform-circle" style={{ animationDelay: "0.4s" }} />
       
-      {/* Multi-platform distribution dots flowing right */}
-      {[0, 1, 2].map((i) => (
-        <div
+      {/* Connecting lines showing synchronization */}
+      <line x1="10.5" y1="6" x2="25.5" y2="6" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.6" strokeDasharray="2" />
+      <line x1="30.5" y1="6" x2="45.5" y2="6" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.6" strokeDasharray="2" />
+      
+      {/* Engagement/response indicators flowing upward from center platform */}
+      {[0, 1].map((i) => (
+        <circle
           key={i}
-          className="platform-dot absolute"
-          style={{
-            left: `${6 + i * 2.5}px`,
-            width: "1.8px",
-            height: "1.8px",
-            background: "rgba(255, 255, 255, 0.9)",
-            borderRadius: "50%",
-            animationDelay: `${i * 0.3}s`
-          }}
+          cx="28"
+          cy="6"
+          r="1"
+          fill="rgba(255, 255, 255, 0.8)"
+          className="engagement-pulse"
+          style={{ animationDelay: `${i * 0.4}s` }}
         />
       ))}
-    </div>
+    </svg>
   </div>
 );
 
